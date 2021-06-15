@@ -73,6 +73,13 @@
                  if (isset($_SESSION['zalogowany'])) {
                     unset($_SESSION['zalogowany']); 
                     $this->zalogowany = null; 
-                  } session_destroy(); } 
+                  } session_destroy(); }
+              function showRegistrationForm(){
+                 $reg = new Registration($this->dbo); 
+                 return $reg->showRegistrationForm(); 
+              } function registerUser(){
+                 $reg = new Registration($this->dbo); 
+                 return $reg->registerUser(); 
+              } 
             //Tutaj pozostałe metody klasy 
     }
